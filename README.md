@@ -7,11 +7,13 @@ A minimalistic web crawler.
 In GitHub, download a zip of the repository for one of the tagged versions.
 Unzip it and go to the folder.
 
+Ruby and the Bundler gem must be installed.
+
 Run
 
 ```bash
 $ bundle
-$ rake install
+$ bundle exec rake install
 ```
 
 ## Usage
