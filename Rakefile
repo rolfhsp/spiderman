@@ -1,5 +1,6 @@
 require "bundler/gem_tasks"
 require "rake/testtask"
+require "rdoc/task"
 
 Rake::TestTask.new(:test) do |t|
   t.libs << "test"
@@ -8,3 +9,10 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task :default => :test
+
+Rake::RDocTask.new do |rd|
+  rd.rdoc_dir = "doc"
+  rd.main = "README.md"
+  rd.rdoc_files.include("README.md", "lib/**/*.rb")
+end
+
