@@ -4,12 +4,21 @@ A minimalistic web crawler.
 
 ## Installation
 
-In GitHub, download a zip of the repository for one of the tagged versions.
-Unzip it and go to the folder.
+The following assumes Git, Ruby and the Bundler gem are installed.
 
-Ruby and the Bundler gem must be installed.
+Clone the GitHub repository
 
-Run
+```bash
+git clone https://github.com/rolfhsp/spiderman.git
+```
+
+A specific tagged version may also be given
+
+```bash
+git clone https://github.com/rolfhsp/spiderman.git --branch v0.0.2
+```
+
+Enter the folder and run
 
 ```bash
 $ bundle
@@ -27,6 +36,8 @@ spiderman [OPTION]... URL
 
 ### Examples
 ```bash
+$ spiderman -h
+$ spiderman -v
 $ spiderman http://www.vg.no
 ```
 
