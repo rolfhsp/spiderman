@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "spiderman"
+
+Spiderman::CLI.run ARGV

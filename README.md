@@ -4,15 +4,15 @@ A minimalistic web crawler.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+In GitHub, download a zip of the repository for one of the tagged versions.
+Unzip it and go to the folder.
 
-```ruby
-gem 'spiderman', :git => 'git://github.com/rolfhsp/spiderman.git'
+Run
+
+```bash
+$ bundle
+$ rake install
 ```
-
-And then execute:
-
-    $ bundle
 
 ## Usage
 
@@ -25,17 +25,16 @@ spiderman [OPTION]... URL
 
 ### Examples
 ```bash
-spiderman http://www.vg.no
+$ spiderman http://www.vg.no
 ```
 
 ## Development
 
-Currently this is a solo project for personal fun...
-:shipit:
+Currently this is a solo project for personal usage.
 
 ## Contributing
 
-Not at the moment, thanks.
+No need at the moment, thanks.
 
 ## License
 

@@ -1,6 +1,12 @@
 require "spiderman/version"
+require "spiderman/cli"
 
-# All code in the gem is namespaced under this module.
+# Namespace for the Spiderman application
 module Spiderman
-  # Your code goes here...
+  
+  # The application name
+  APPNAME = "spiderman"
+
 end
+
+
