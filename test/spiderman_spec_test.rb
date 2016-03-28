@@ -19,10 +19,23 @@ describe Spiderman do
       end
     end
 
+    describe "option --url" do
+      it "should not lack the URL argument" do
+        out,err = capture_io {::Spiderman::CLI::run(%w(--url))}
+        out.chomp.must_include("missing argument")
+      end
+
+      it "should not accept FTP URL" do
+        out,err = capture_io {::Spiderman::CLI::run(%w(--url ftp://example.com))}
+        out.chomp.must_include("only http/https URLs are supported")
+      end
+
+    end
+
     describe "invalid option" do
       it "should give a proper error message" do
         out, err = capture_io {::Spiderman::CLI::run(%w(-z))}
-        out.chomp.must_equal('Invalid option(s) given: ["-z"]')
+        out.chomp.must_include('invalid option')
       end
     end
 

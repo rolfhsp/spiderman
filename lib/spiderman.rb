@@ -1,3 +1,4 @@
+require "spiderman/spiderman"
 require "spiderman/version"
 require "spiderman/cli"
 

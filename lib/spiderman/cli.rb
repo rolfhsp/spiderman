@@ -12,16 +12,18 @@ module Spiderman
     def self.parse_options(args)
       
       options = OpenStruct.new
-      options.library = []
-      options.inplace = false
-      options.encoding = :utf8
-      options.transfer_type = :auto
-      options.verbose = false
 
       opt_parser = OptionParser.new do |opts|
-        opts.banner = 'Usage: spiderman [options] [URL]'
+        opts.banner = 'Usage: spiderman [options]'
         opts.separator ""
         opts.separator "Specific options:"
+
+        opts.on("--url URL", "Starting URL") do |url|
+          if url !~ VALID_URL_RE
+            raise OptionParser::InvalidArgument, "only http/https URLs are supported"
+          end
+          options.url = url
+        end
 
         opts.separator ""
         opts.separator "Common options:"
@@ -37,11 +39,13 @@ module Spiderman
           return
         end
       end
+
       begin
         opt_parser.parse!(args)
-      rescue OptionParser::InvalidOption => ex
-        puts "Invalid option(s) given: #{ex.args}"
+      rescue OptionParser::ParseError => ex
+        puts ex
       end
+
       options
     end
 
