@@ -2,4 +2,4 @@
 
 require "spiderman"
 
-Spiderman::CLI.run ARGV
+Spiderman::CLI.new().run(ARGV)
