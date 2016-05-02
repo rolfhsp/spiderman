@@ -160,7 +160,7 @@ module Spiderman
             # ...
 
             # Scrape text for urls and add to queue
-            # If the site_onlly option is true, supply the base url
+            # If the site_only option is true, supply the base url
             if (@opts[:site_only])
               url_strings = scraper.scrape_url(@base_url_string)
             else
