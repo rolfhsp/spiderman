@@ -131,7 +131,7 @@ module Spiderman
 
         page, text = nil
         begin
-          timeout(2) do
+          Timeout.timeout(2) do
             page = open(url_data[:url_string])
 
             if ( page && @opts[:verbose] )
